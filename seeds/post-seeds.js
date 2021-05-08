@@ -3,7 +3,7 @@ const { Post } = require('../models');
 const postData = [
   {
     post_title: 'Love at first byte: Burger of the Day',
-    post_content: 'What do you get if you cross a computer and a burger? The big mac butter beet the full stack in this competition... ',
+    post_content: 'What do you get if you cross a computer and a burger? The big mac butter beet the double stack in this competition... ',
     user_id: 1
   },
   {
