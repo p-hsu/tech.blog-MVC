@@ -6,31 +6,34 @@ const userData = [
     last_name: 'Belcher',
     user_name: 'burgerDaddy',
     email: 'bburger-dad@email.com',
-    password: 123456789
+    password: 'b3rg3rsrul3'
   },
   {
     first_name: 'Archer',
     last_name: 'Sterling',
     user_name: 'topDawg',
     email: 'deadliest-spy@email.com',
-    password: 098765432
+    password: 'd@ngerZ0ne'
   },
   {
     first_name: 'Carl',
     last_name: 'Quahog',
     user_name: 'miniMart',
     email: 'carl-mart@email.com',
-    password: 096096096
+    password: 'id0ntkn0w'
   },
   {
     first_name: 'Jon',
     last_name: 'Benjamin',
     user_name: 'theHammer',
     email: 'harry-jb@email.com',
-    password: 135792468
+    password: 'v0ice@ct0r'
   },
 ];
 
-const seedUsers= () => User.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData, {
+  individualHooks: true,
+  returning: true,
+});
 
 module.exports = seedUsers;
