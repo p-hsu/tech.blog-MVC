@@ -1,7 +1,7 @@
 // data to create, update, delete posts
 const router = require('express').Router();
 const { Post } = require('../../models');
-const withAuth = require('../../utils/auth');
+const withAuth = require('../../util/auth');
 
 //creating new post 
 router.post('/', withAuth, async (req, res) => {
@@ -29,7 +29,7 @@ router.put('/:id', withAuth, async (req, res) => {
       });
   
       if (!postData) {
-        res.status(404).json({ message: 'Are you lost...?' });
+        res.status(404).json({ message: 'No blog post to be found, please try again!' });
         return;
       }
   
@@ -50,7 +50,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!postData) {
-      res.status(404).json({ message: 'Are you lost...?' });
+      res.status(404).json({ message: 'No blog post to be found, please try again!' });
       return;
     }
 

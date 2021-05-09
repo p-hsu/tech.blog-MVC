@@ -1,7 +1,7 @@
 // data to create, update, delete Comments
 const router = require('express').Router();
 const { Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
+const withAuth = require('../../util/auth');
 
 //creating new comment 
 router.post('/', withAuth, async (req, res) => {
@@ -28,7 +28,7 @@ router.put('/:id', withAuth, async (req, res) => {
       });
   
       if (!commentData) {
-        res.status(404).json({ message: 'Are you lost...?' });
+        res.status(404).json({ message: 'Hmm..not sure that comment exists' });
         return;
       }
   
@@ -49,7 +49,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     });
 
     if (!commentData) {
-      res.status(404).json({ message: 'Are you lost...?' });
+      res.status(404).json({ message: 'Hmm..not sure that comment exists' });
       return;
     }
 
