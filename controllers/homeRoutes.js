@@ -9,7 +9,7 @@ try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
         // order by most recently updated post
-        order: [['updatedAt', 'DESC']],
+        // order: [['updatedAt', 'DESC']],
         include: [
             {
             model: User,

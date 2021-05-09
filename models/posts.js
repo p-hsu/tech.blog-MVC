@@ -27,6 +27,10 @@ Post.init(
             model: 'user',
             key: 'id'
         }
+    },
+    updated: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     }
   },
   {

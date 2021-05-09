@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost">
+    <title>Tech Blog</title>
+</head>
+<body>
+    
+    <!-- nav bar -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper orange darken-4">
+            <div class="right brand-logo cyan-text text-darken-3">TECH BLOG</div>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <!-- if logged in show dashboard and logout -->
+                <!-- {{#if logged_in}} -->
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="#">Logout</a></li>
+                <!-- {{else}} -->
+                <li><a href="/users">Sign Up</a></li>
+                <li><a class="modal-trigger" href="#modal1">Log In</a></li>
+                <!-- {{/if}} -->
+            </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- sidebar for mobile -->
+    <ul class="sidenav" id="mobile-nav">
+                <!-- if logged in show dashboard and logout -->
+                <!-- {{#if logged_in}} -->
+                <li><a class="orange-text text-darken-4" href="/dashboard">Dashboard</a></li>
+                <li><a class="orange-text text-darken-4" href="#">Logout</a></li>
+                <!-- {{else}} -->
+                <li><a class="orange-text text-darken-4" href="/users">Sign Up</a></li>
+                <li><a class="orange-text text-darken-4" class="modal-trigger" href="#modal1">Log In</a></li>
+                <!-- {{/if}} -->
+    </ul>
+
+    <!-- log in modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="user_name" type="text" class="validate">
+                    <label class="active" for="user_name">Username</label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="input-field col s6">
+                    <input  id="password" type="password" class="validate">
+                    <label class="active" for="password">Password</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="/dashboard" class="modal-close cyan-text text-darken-3 waves-effect waves-green btn-flat">Login</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- {{{ body }}} -->
+
+<!-- THIS IS FOR THE HOMEPAGE VIEW -->
+
+        <h4 class="center cyan-text text-darken-3">Welcome to the TECH BLOG!</h4>
+        <h5 class="center"> Happy reading and consider<span class="orange-text text-darken-3"> contributing </span>by signing up above!</h5>
+        </br>
+        <!-- {{ #each posts as |post| }} -->
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <a class="card-title orange-text text-darken-4" href="/posts/:id">BLOG TITLE HERE: USE {{post.post_title}}</a>
+                    <!-- <a class="card-title orange-text text-darken-4" href="/posts/{{post.id}}">{{post.post_title}}</a> -->
+                    <p>
+                        POST CONTENT HERE: USE {{post.post_content}}
+                    </p>
+                </div>
+                <div class="card-action">
+                    <p>Created by <a href="/user:id">{{post.user.user_name}}</a>on {{post.createdAt}} 
+                    <!-- #if updatedAt.true}} -->
+                    <span> || Edited on {{post.updatedAt}}</span>
+                    <!-- {{/if}} -->
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- {{/each}} -->
+
+<!-- THIS WILL BE FOR SEEING EACH POST AND ITS COMMENTS  -->
+
+        <!-- {{ #each posts as |post| }} -->
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <a class="card-title orange-text text-darken-4" href="/posts/:id">BLOG TITLE HERE: USE {{post.post_title}}</a>
+                    <!-- <a class="card-title orange-text text-darken-4" href="/posts/{{post.id}}">{{post.post_title}}</a> -->
+                    <p>
+                        POST CONTENT HERE: USE {{post.post_content}}
+                    </p>
+                </div>
+                <div class="card-action">
+                    <p>Created by <a href="/user:id">{{post.user.user_name}}</a>on {{post.createdAt}} 
+                    <!-- #if updatedAt.true}} -->
+                    <span> || Edited on {{post.updatedAt}}</span>
+                    <!-- {{/if}} -->
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- {{/each}} -->
+
+
+      </div>
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../../public/js/script.js"></script>
+</body>
+</html>

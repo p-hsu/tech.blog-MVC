@@ -1,44 +1,58 @@
-{{!-- what will be static mostly with a few changes ie signup/login vs logout --}}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost">
+    <title>Tech Blog</title>
 </head>
-
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">Tech Blog!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
+    
+    <!-- nav bar -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper orange darken-4">
+            <div class="right brand-logo cyan-text text-darken-3">TECH BLOG</div>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <!-- if logged in show dashboard and logout -->
+                {{#if logged_in}}
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="#">Logout</a></li>
+                {{else}}
+                <li><a href="/users">Sign Up</a></li>
+                <li><a class="modal-trigger" href="#modal1">Log In</a></li>
+                {{/if}}
+            </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- sidebar for mobile -->
+    <ul class="sidenav" id="mobile-nav">
+        <!-- if logged in show dashboard and logout -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <li><a class="orange-text text-darken-4" href="/dashboard">Dashboard</a></li>
+        <li><a class="orange-text text-darken-4" href="#">Logout</a></li>
         {{else}}
-        <a href="/login">login</a>
+        <li><a class="orange-text text-darken-4" href="/users">Sign Up</a></li>
+        <li><a class="orange-text text-darken-4" class="modal-trigger" href="#modal1">Log In</a></li>
         {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+    </ul>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    <div class="container">
+
+    {{{ body }}}
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../../public/js/script.js"></script>
 </body>
-
 </html>
