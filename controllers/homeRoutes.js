@@ -32,7 +32,7 @@ try {
 });
 
 // render view-post view with data for individual posts and associated comments data
-router.get('/post/:id', async (req, res) => {
+router.get('/posts/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(
             req.params.id, {
@@ -43,6 +43,7 @@ router.get('/post/:id', async (req, res) => {
                     },
                     {
                         model: Comment,
+                        include: [{model: User}],
                         attributes: ['comment_content', 'user_id']
                     }
                 ],
@@ -115,14 +116,14 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 // rendering login view
-router.get('/login', (req, res) => {
+router.get('/signup', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
         res.redirect('/dashboard');
         return;
     }
 
-    res.render('login');
+    res.render('signup');
 });
 
 // rendering logout view
