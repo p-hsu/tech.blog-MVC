@@ -8,7 +8,7 @@ const postData = [
   },
   {
     post_title: 'Mole Hunt',
-    post_content: 'All expense paid for - ahem - I mean no expences paid at all because this company values no one but mother\'s alcohol cabinet. The ISIS Mainframe will show excellent record of my use - or lack of use - of my operational account.',
+    post_content: 'All expense paid for - ahem - I mean no expenses paid at all because this company values no one but mother\'s alcohol cabinet. The ISIS Mainframe will show excellent record of my use - or lack of use - of my operational account.',
     user_id: 2
   },
   {
