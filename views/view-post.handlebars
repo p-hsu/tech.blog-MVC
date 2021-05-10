@@ -1,1 +1,44 @@
-{{!-- GET posts also GET, POST, UPDATE, DELETE comments --}}
+{{!-- GET posts also GET comments --}}
+{{#each posts as |post| }}
+{{>post-main}}
+{{/each}}
+
+<div class="col s12 m6">
+    <div class="card comment-card">
+        <div class="card-content">
+            <p class="card-title orange-text text-darken-4">Comments:</p>
+            <hr>
+            {{#each comments as |comment|}}
+            {{>comment-main}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<!-- creating comment section-->
+<div class="col s12 m6">
+    <div class="card create-comment-card">
+        <div class="card-content">
+            <p class="card-title orange-text text-darken-4">Say something!</p>
+            <hr>
+            {{#if logged_in}}
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                        <button class="btn waves-effect waves-light comment-btn" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            {{else}}
+            <h6>Want to make a comment? Sign up or log in above!</h6>
+            {{/if}}
+        </div>
+    </div>    
+</div>
+
+{{#if logged_in}}
+<script src="../public/js/comment.js"></script>
+{{/if}}

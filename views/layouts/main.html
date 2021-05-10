@@ -97,9 +97,10 @@
         </div>
         <!-- {{/each}} -->
 
-<!-- THIS WILL BE FOR SEEING EACH POST AND ITS COMMENTS  -->
+        <hr>
+        <span>>>>>>>>>>THIS WILL BE FOR SEEING EACH POST AND ITS COMMENTS<<<<<<<<<<<</span> 
+        <hr>
 
-        <!-- {{ #each posts as |post| }} -->
         <div class="col s12 m6">
             <div class="card">
                 <div class="card-content">
@@ -118,10 +119,213 @@
                 </div>
             </div>
         </div>
-        <!-- {{/each}} -->
+
+        <div class="col s12 m6">
+            <div class="card comment-card">
+                <div class="card-content">
+                    <p class="card-title orange-text text-darken-4">Comments:</p>
+                    <hr>
+                    <!-- {{ #each comments as |comment| }} -->
+                    <h6 class="orange-text text-darken-4">{{user.user_name}} says:</h6>
+                    <p>
+                        COMMENT CONTENT HERE: USE {{comment_content}}
+                    </p>
+                    <!-- {{/each}} -->
+                    <h6 class="orange-text text-darken-4">{{user.user_name}} says:</h6>
+                    <p>
+                        COMMENT CONTENT HERE: USE {{comment_content}}
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+        <!-- comment section-->
+        <div class="col s12 m6">
+            <div class="card create-comment-card">
+                <div class="card-content">
+                    <p class="card-title orange-text text-darken-4">Say something!</p>
+                    <hr>
+                    <!-- {{#if logged_in}} -->
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- {{else}} -->
+                    <h6>Want to make a comment? Sign up or log in above!</h6>
+                    <!-- {{/if}} -->
+                </div>
+            </div>    
+        </div>
+
+    <hr>
+    <span>>>>>>>>>>THIS WILL BE FOR SIGNING UP TO A NEW ACCOUNT<<<<<<<<<<<</span> 
+    <hr>
+    <h4 class="center cyan-text text-darken-3">We're glad to have you!</h4>
+    <h6 class="center">Please fill in all fields below - password requirement must be at least<span class="orange-text text-darken-3"> EIGHT </span>characters.</h6>
+    </br>
+    <div class="row">
+        <form class="col s10 offset-s2">
+            <div class="row">
+                <div class="input-field col s5">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s5">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s5">
+                    <input id="user_name" type="text" class="validate">
+                    <label for="user_name">Username</label>
+                </div>
+                <div class="input-field col s5">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+                <div class ="col s3 offset-s1">
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Sign me up!
+                    <i class="material-icons right">thumb_up</i>
+                    </button>
+                </div>
+            </div>
+          
+        </form>
+      </div>   
+
+      <hr>
+      <span>>>>>>>>>>THIS WILL BE FOR CREATING A NEW POST<<<<<<<<<<</span> 
+      <hr>
+
+    </br>
+      <h5 class="cyan-text text-darken-3">Make some noise!</h5>
+
+      <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">What's on your mind?</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Oh really? Tell me more about it!</label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class ="col right">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Create
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <span>>>>>>>>>>THIS WILL BE FOR UPDATING A POST<<<<<<<<<<</span> 
+    <hr>
+
+    </br>
+    <h5 class="cyan-text text-darken-3">Need to change some things?</h5>
+
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Remember...!</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea id="textarea1" class="materialize-textarea">POST CONTENT HERE: USE {{post_content}}</textarea>
+                                <label for="textarea1">...there is no such thing as perfection.</label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class ="col right">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Update
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-      </div>
+    <hr>
+    <span>>>>>>>>>>THIS WILL BE FOR THE DASHBOARD VIEW<<<<<<<<<<</span> 
+    <hr>
+
+    <h4 class="center cyan-text text-darken-3">Nice to see you again <span class="orange-text text-darken-3">{{user_name}}</span>!</h4>
+    <h5 class="center"> What are you up to today?</h5>
+    </br>
+    <div class ="row center">
+        <button class="btn waves-effect waves-light edit-btn" type="button" name="action">New
+        <i class="material-icons right">lightbulb</i>
+        </button>
+    </div>
+    <!-- {{ #each posts as |post| }} -->
+    <div class="col s12 m6">
+        <div class="card">
+            <div class="card-content">
+                <div class ="col right">
+                    <button class="btn waves-effect waves-light delete-btn" type="button" name="action">Delete
+                    <i class="material-icons right">delete</i>
+                    </button>
+                </div>
+                <div class ="col right">
+                    <button class="btn waves-effect waves-light edit-btn" type="button" name="action">Edit
+                    <i class="material-icons right">edit</i>
+                    </button>
+                </div>
+                <a class="card-title orange-text text-darken-4" href="/posts/:id">BLOG TITLE HERE: USE {{post_title}}</a>
+
+                <!-- <a class="card-title orange-text text-darken-4" href="/posts/{{post.id}}">{{post.post_title}}</a> -->
+                <p>
+                    POST CONTENT HERE: USE {{post_content}}
+                </p>
+            </div>
+            <div class="card-action">
+                <p>Created by <a href="/user:id">{{user.user_name}}</a>on {{createdAt}} 
+                <!-- #if updatedAt.true}} -->
+                <span> || Edited on {{updatedAt}}</span>
+                <!-- {{/if}} -->
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- {{/each}} -->
+
+
+
+
+    <!-- This tab below is the container tag DONT DELETE -->
+    </div> 
 
 
 
@@ -130,6 +334,6 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../../public/js/script.js"></script>
+    <script src="../../public/js/materialize.js"></script>
 </body>
 </html>

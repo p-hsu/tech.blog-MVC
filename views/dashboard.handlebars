@@ -1,1 +1,37 @@
 {{!-- GET user posts to display, option to create post or view posts --}}
+<h4 class="center cyan-text text-darken-3">Nice to see you again <span class="orange-text text-darken-3">{{user_name}}</span>!</h4>
+<h5 class="center"> What are you up to today?</h5>
+</br>
+<div class ="row center">
+    <button class="btn waves-effect waves-light edit-btn" type="button" name="action">New
+    <i class="material-icons right">lightbulb</i>
+    </button>
+</div>
+{{ #each posts as |post| }}
+<div class="col s12 m6">
+    <div class="card">
+        <div class="card-content">
+            <div class ="col right">
+                <button class="btn waves-effect waves-light delete-btn" type="button" name="action">Delete
+                <i class="material-icons right">delete</i>
+                </button>
+            </div>
+            <div class ="col right">
+                <button class="btn waves-effect waves-light edit-btn" type="button" name="action">Edit
+                <i class="material-icons right">edit</i>
+                </button>
+            </div>
+            <a class="card-title orange-text text-darken-4" href="/posts/{{id}}">BLOG TITLE HERE: USE {{post_title}}</a>
+            <p>
+                {{post_content}}
+            </p>
+        </div>
+        <div class="card-action">
+            <p>Created by <a href="/user:id">{{user.user_name}}</a>on {{createdAt}} 
+            {{#if updated}}
+            <span> || Edited on {{updatedAt}}</span>
+            {{/if}}
+            </p>
+        </div>
+    </div>
+</div>
