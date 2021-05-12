@@ -16,13 +16,13 @@ A tech blog featuring the Model-View-Controller paradigm using Handlebars and Se
 
 *  SQL randomizing user-seeds everytime `npm run seed`
 
-* `Uncaught TypeError: Cannot read property 'addEventListener' of null for several scripts : **RESOLVED**
+* `Uncaught TypeError: Cannot read property 'addEventListener' of null for several scripts :: **RESOLVED**
 
 * Log In button on modal not functioning: frontend JS
 
-* Create post button not functioning: frontend JS
+* Create post button not functioning: frontend JS ::  **RESOLVED**
 
-* 400 @ `comment.js` line 13
+* 400 @ `comment.js` line 13 for POST request
 
 ****
 
