@@ -21,7 +21,12 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
     // update a category by its `id` value
     try {
-      const postData = await Post.update(req.body, {
+      const postData = await Post.update({
+        post_title: req.body.post_title,
+        post_content: req.body.post_content,
+        updated: true
+      },
+      {
         where: {
           id: req.params.id,
           user_id: req.session.user_id,

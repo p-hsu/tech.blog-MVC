@@ -12,7 +12,7 @@
 {{#each posts as |posts| }}
 
 <div class="col s12 m6">
-    <div class="card post-card">
+    <div class="card posts-card">
         <div class="card-content">
             <div class ="col right">
                 <button data-delete-id="{{posts.id}}" class="btn waves-effect waves-light delete-btn" type="button" name="action">Delete
@@ -30,8 +30,8 @@
             </p>
         </div>
         <div class="card-action">
-            <p>Created by {{user_name}} on {{format_date posts.createdAt}} 
-            {{#if posts.udpated}}
+            <p>Created by {{user.user_name}} on {{format_date posts.createdAt}} 
+            {{#if udpated}}
             <span> || Edited on {{format_date posts.updatedAt}}</span>
             {{/if}}
             </p>

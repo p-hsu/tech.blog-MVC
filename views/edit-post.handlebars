@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-content">
             <div class="row">
-                <form class="col s12">
+                <form class="col s12 editpost-form">
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="post_title" class="materialize-textarea">{{post_title}}</textarea>
@@ -18,15 +18,16 @@
                             <label for="textarea1">...there is no such thing as perfection.</label>
                         </div>
                     </div>
+
+                    <div class ="col right">
+                        <button class="btn waves-effect waves-light editpost-btn" type="submit" name="action">Update
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </div>
                 </form>
-                <div class ="col right">
-                    <button class="btn waves-effect waves-light editpost-btn" type="submit" name="action">Update
-                    <i class="material-icons right">send</i>
-                    </button>
-                </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="../public/js/edit-post.js"></script>
+<script src="/js/edit-post.js"></script>

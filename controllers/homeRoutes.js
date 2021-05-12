@@ -67,7 +67,7 @@ router.get('/posts/:id', async (req, res) => {
 });
 
 // rendering edit-post view with router.get
-router.get('/dashboard/edit-post/:id', withAuth, async (req, res) => {
+router.get('/edit-post/:id', withAuth, async (req, res) => {
     try {
         // find post by pk
         const postData = await Post.findByPk(req.params.id);

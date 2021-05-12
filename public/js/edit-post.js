@@ -1,8 +1,8 @@
 async function editHandler(event) {
     event.preventDefault();
     // set variables for database columns
-    const post_title = document.querySelector('#post_title').value;
-    const post_content = document.querySelector('#post_content').value;
+    const post_title = document.getElementById('post_title').value;
+    const post_content = document.getElementById('post_content').value;
     const url = window.location.pathname;
     const id = url.substring(url.lastIndexOf('/') + 1);
   
@@ -18,10 +18,10 @@ async function editHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace(`/posts/${id}`);
+      document.location.replace(`/dashboard`);
     } else {
       alert(response.statusText);
     }
 };
   
-document.querySelector('.editpost-btn').addEventListener('submit', editHandler);
+document.querySelector('.editpost-form').addEventListener('submit', editHandler);

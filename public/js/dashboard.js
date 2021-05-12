@@ -10,6 +10,8 @@ const postHandler = (event) => {
 // get post.id to DELETE request by id
 const deletePost = async (event) => {
     const id = event.target.getAttribute('data-delete-id');
+    console.log(id);
+
 
     let confirmation = confirm('Are you sure you want to delete this post?');
 
@@ -29,7 +31,8 @@ const deletePost = async (event) => {
 // get post.id to go to edit-post view
 const editPost = async (event) => {
     const id = event.target.getAttribute('data-edit-id');
+    console.log(id)
     window.location.replace(`/edit-post/${id}`)
 }
     
-// document.querySelector('.posts-card').addEventListener('click', postHandler)
+document.querySelector('.posts-card').addEventListener('click', postHandler)
