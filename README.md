@@ -14,13 +14,15 @@ A tech blog featuring the Model-View-Controller paradigm using Handlebars and Se
 
 #### Issues to debug:
 
-*  SQL is randomizing user-seeds everytime `npm run seed`
+*  SQL randomizing user-seeds everytime `npm run seed`
 
 * `Uncaught TypeError: Cannot read property 'addEventListener' of null for several scripts : **RESOLVED**
 
 * Log In button on modal not functioning: frontend JS
 
 * Create post button not functioning: frontend JS
+
+* 400 @ `comment.js` line 13
 
 ****
 

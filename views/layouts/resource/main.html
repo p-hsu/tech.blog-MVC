@@ -46,27 +46,29 @@
     </ul>
 
     <!-- log in modal -->
-    <div id="modal1" class="modal">
+    <form id="modal1" class="modal" id="login-form">
         <div class="modal-content">
             <h4 class="center">Logging back in...</h4>
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="user_name" type="text" class="validate">
-                    <label class="active" for="user_name">Username</label>
+                    <input id="login-email" type="text" class="validate">
+                    <label class="active" for="login-email">Email</label>
                 </div>
             </div>
             
             <div class="row">
                 <div class="input-field col s6">
-                    <input  id="password" type="password" class="validate">
-                    <label class="active" for="password">Password</label>
+                    <input  id="login-password" type="password" class="validate">
+                    <label class="active" for="login-password">Password</label>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
-            <a href="/dashboard" class="modal-close cyan-text text-darken-3 waves-effect waves-green btn-flat">Login</a>
+            <button class="modal-close cyan-text text-darken-3 waves-effect waves-green btn-flat" id="login-btn" type="submit">Login
+                <i class="material-icons right">thumb_up</i>
+            </button>
         </div>
-    </div>
+    </form>
 
     <div class="container">
 
@@ -212,32 +214,32 @@
       <hr>
 
     </br>
-      <h5 class="cyan-text text-darken-3">Make some noise!</h5>
-
-      <div class="col s12 m6">
+    <h5 class="cyan-text text-darken-3">Make some noise!</h5>
+    
+    <div class="col s12 m6">
         <div class="card">
             <div class="card-content">
-                <div class="row">
+                <form class="row">
                     <div class="input-field col s4">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">What's on your mind?</label>
+                        <input id="post_title" type="text" class="validate">
+                        <label for="post_title">Title</label>
                     </div>
-                </div>
-                <div class="row">
-                    <form class="col s12">
+
+
+                    <div class="col s12">
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                <label for="textarea1">Oh really? Tell me more about it!</label>
+                                <textarea id="post_content" class="materialize-textarea post-content"></textarea>
+                                <label for="post_content">Content</label>
                             </div>
                         </div>
-                    </form>
+                    </div>
                     <div class ="col right">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Create
+                        <button class="btn waves-effect waves-light submitnew-btn" type="submit" name="action">Create
                         <i class="material-icons right">send</i>
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

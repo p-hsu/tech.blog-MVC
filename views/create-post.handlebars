@@ -5,27 +5,26 @@
 <div class="col s12 m6">
     <div class="card">
         <div class="card-content">
-            <div class="row">
+            <form class="row newpost-form">
                 <div class="input-field col s4">
                     <input id="post_title" type="text" class="validate">
                     <label for="post_title">Title</label>
                 </div>
-            </div>
-            <div class="row">
-                <form class="col s12">
+
+                <div class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="post_content" class="materialize-textarea post-content"></textarea>
                             <label for="post_content">Content</label>
                         </div>
                     </div>
-                </form>
+                </div>
                 <div class ="col right">
-                    <button class="btn waves-effect waves-light submitnew-btn" type="submit" name="action">Create
+                    <button class="btn waves-effect waves-light newpost-btn" type="submit" name="action">Create
                     <i class="material-icons right">send</i>
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

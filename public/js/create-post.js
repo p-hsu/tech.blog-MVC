@@ -1,8 +1,8 @@
 const createPostHandler = async (event) => {
     event.preventDefault();
   
-    const post_title = document.querySelector('#post_title').value;
-    const post_content = document.querySelector('#post_content').value;
+    const post_title = document.getElementById('post_title').value;
+    const post_content = document.getElementById('post_content').value;
   
   if (post_title && post_content) {
     const response = await fetch(`/api/posts`, {
@@ -19,10 +19,10 @@ const createPostHandler = async (event) => {
     } else {
       alert('Uh oh - something went wrong.')
     }
-  } else {
-    alert('A new post requires both title and content')
-  }
+    } else {
+      alert('A new post requires both title and content')
+    }
   };
   
   
-document.querySelector('.submitnew-btn').addEventListener('submit', createPostHandler)
+document.querySelector('.newpost-form').addEventListener('submit', createPostHandler)

@@ -2,15 +2,17 @@
 const commentHandler = async (event) => {
     event.preventDefault();
   
-    const comment_content = document.querySelector('#comment_content').value;
+    const comment_content = document.getElementById('comment_content').value;
+
+    console.log(comment_content);
     // get post id from url
     const url = window.location.pathname;
-    const id = url.substring(url.lastIndexOf('/') + 1);
+    const user_id = url.substring(url.lastIndexOf('/') + 1);
 
     if (comment_content) {
         const response = await fetch(`/api/comments`, { 
             method: 'POST',
-            body: JSON.stringify({id, comment_content}),
+            body: JSON.stringify({user_id, comment_content}),
             headers: {
                 'Content-Type': 'application/json', 
             },
@@ -27,4 +29,4 @@ const commentHandler = async (event) => {
         }
 };
   
-document.querySelector('.comment-btn').addEventListener('submit', commentHandler)
+document.querySelector('.comment-form').addEventListener('submit', commentHandler)
