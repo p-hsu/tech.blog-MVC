@@ -13,7 +13,10 @@ A tech blog featuring the Model-View-Controller paradigm using Handlebars and Se
 *ONGOING*
 
 #### Issues to debug:
-*ONGOING*
+
+SQL is randomizing user-seeds everytime `npm run seed`
+
+`Uncaught TypeError: Cannot read property 'addEventListener' of null for several scripts
 
 ****
 
