@@ -7,21 +7,21 @@
         <div class="card-content">
             <div class="row">
                 <div class="input-field col s4">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">What's on your mind?</label>
+                    <input id="post_title" type="text" class="validate">
+                    <label for="post_title">Title</label>
                 </div>
             </div>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="textarea1" class="materialize-textarea"></textarea>
-                            <label for="textarea1">Oh really? Tell me more about it!</label>
+                            <textarea id="post_content" class="materialize-textarea post-content"></textarea>
+                            <label for="post_content">Content</label>
                         </div>
                     </div>
                 </form>
                 <div class ="col right">
-                    <button class="btn waves-effect waves-light newpost-btn" type="submit" name="action">Create
+                    <button class="btn waves-effect waves-light submitnew-btn" type="submit" name="action">Create
                     <i class="material-icons right">send</i>
                     </button>
                 </div>
@@ -30,4 +30,4 @@
     </div>
 </div>
 
-<script src="../public/js/new-post.js"></script>
+<script src="/js/create-post.js"></script>

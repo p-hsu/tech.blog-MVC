@@ -8,8 +8,6 @@ router.get('/', async (req, res) => {
 try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
-        // order by most recently updated post
-        // order: [['updatedAt', 'DESC']],
         include: [
             {
             model: User,
@@ -115,16 +113,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-// rendering login view
-router.get('/signup', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-        res.redirect('/dashboard');
-        return;
-    }
-
-    res.render('signup');
-});
+// rendering signup
+router.get('/signup', (req, res) => { res.render('signup')});
 
 // rendering logout view
 router.get('/logout', (req, res) => { res.render('logout')});
