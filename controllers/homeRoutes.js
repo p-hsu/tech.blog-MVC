@@ -66,11 +66,8 @@ router.get('/posts/:id', async (req, res) => {
     }
 });
 
-// rendering create-post view with router.get
-router.get('/new-post', withAuth, async (req, res) => res.render('create-post', { logged_in: req.session.logged_in } ));
-
 // rendering edit-post view with router.get
-router.get('/edit-post/:id', withAuth, async (req, res) => {
+router.get('/dashboard/edit-post/:id', withAuth, async (req, res) => {
     try {
         // find post by pk
         const postData = await Post.findByPk(req.params.id);
@@ -112,6 +109,10 @@ router.get('/dashboard', withAuth, async (req, res) => {
         res.status(500).json(err);
   }
 });
+
+// rendering create-post view with router.get
+router.get('/dashboard/new-post', withAuth, async (req, res) => res.render('create-post', { logged_in: req.session.logged_in } ));
+
 
 // rendering signup
 router.get('/signup', (req, res) => { res.render('signup')});

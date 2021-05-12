@@ -22,6 +22,6 @@ async function editHandler(event) {
     } else {
       alert(response.statusText);
     }
-  }
+};
   
-  document.querySelector('.editpost-btn').addEventListener('submit', editHandler);
+document.querySelector('.editpost-btn').addEventListener('submit', editHandler);
