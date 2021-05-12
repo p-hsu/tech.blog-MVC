@@ -22,6 +22,8 @@ A tech blog featuring the Model-View-Controller paradigm using Handlebars and Se
 
 * Create post button not functioning: frontend JS ::  **RESOLVED**
 
+* EDIT/DELETE post button not functioning:
+
 * 400 @ `comment.js` line 13 for POST request
 
 ****
