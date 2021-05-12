@@ -7,12 +7,12 @@ const commentHandler = async (event) => {
     console.log(comment_content);
     // get post id from url
     const url = window.location.pathname;
-    const user_id = url.substring(url.lastIndexOf('/') + 1);
+    const post_id = url.substring(url.lastIndexOf('/') + 1);
 
     if (comment_content) {
         const response = await fetch(`/api/comments`, { 
             method: 'POST',
-            body: JSON.stringify({user_id, comment_content}),
+            body: JSON.stringify({post_id, comment_content}),
             headers: {
                 'Content-Type': 'application/json', 
             },

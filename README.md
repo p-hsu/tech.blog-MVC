@@ -26,7 +26,7 @@ A tech blog featuring the Model-View-Controller paradigm using Handlebars and Se
 
 * update button not functioning > **RESOLVED**
 
-* 400 @ `comment.js` line 13 for POST request
+* 400 @ `comment.js` line 13 for POST request > **RESOVLED**
 
 ****
 
