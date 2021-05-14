@@ -1,5 +1,4 @@
 {{!-- GET user posts to display, option to create post or view posts --}}
-{{#if logged_in}}
 <h4 class="center cyan-text text-darken-3">Nice to see you again <span class="orange-text text-darken-3">{{user_name}}</span>!</h4>
 <h5 class="center"> What are you up to today?</h5>
 </br>
@@ -9,10 +8,11 @@
     </a>
 </div>
 
+<div class="col s12 m6  posts-card">
+
 {{#each posts as |posts| }}
 
-<div class="col s12 m6">
-    <div class="card posts-card">
+    <div class="card">
         <div class="card-content">
             <div class ="col right">
                 <button data-delete-id="{{posts.id}}" class="btn waves-effect waves-light delete-btn" type="button" name="action">Delete
@@ -30,23 +30,13 @@
             </p>
         </div>
         <div class="card-action">
-            <p>Created by {{user.user_name}} on {{format_date posts.createdAt}} 
-            {{#if udpated}}
-            <span> || Edited on {{format_date posts.updatedAt}}</span>
-            {{/if}}
-            </p>
+            <p>Created on {{format_date posts.created_at}} </p>
         </div>
     </div>
-</div>
 
 {{/each}}
 
-{{else}}
-
-<h4 class="center cyan-text text-darken-3">Hold up!</h4>
-<h5 class="center"> You have to log in first!</h5>
-
-{{/if}}
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="/js/dashboard.js"></script>

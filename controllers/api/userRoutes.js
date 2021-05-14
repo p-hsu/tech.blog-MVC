@@ -26,7 +26,7 @@ router.post('/login', async (req, res) => {
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Oops! Double check your credentials and try again.' });
+        .json({ message: 'Oops! Double check your credentials and try again. Email' });
       return;
     }
 
@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Oops! Double check your credentials and try again.' });
+        .json({ message: 'Oops! Double check your credentials and try again. Password' });
       return;
     }
 
