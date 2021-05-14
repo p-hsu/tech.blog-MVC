@@ -14,7 +14,7 @@ A tech blog featuring the Model-View-Controller paradigm using Handlebars and Se
 
 #### Issues to debug:
 
-*  SQL randomizing user-seeds everytime `npm run seed`
+*  *SQL randomizing user-seeds everytime `npm run seed` >> Has to do with .bulkCreate : can use .create and loop to initiate hooks*
 
 * `Uncaught TypeError: Cannot read property 'addEventListener' of null for several scripts > **RESOLVED**
 
@@ -40,27 +40,54 @@ BACKEND:
 1. Handlebar.js: to handle templating language
 2. Sequelize: to handle Object-relational Mapping
 3. NPM packages:
-    - express-session
-    - dotenv
     - bcrypt
-    - connect-session-sequelize
+    - connet-session-sequelize
+    - dotenv
+    - express
+    - express-handlebars
+    - express-session
+    - mysql2
+    - sequelize
 
 FRONTEND:
 1. CSS
-2. JavaScript 
+2. JavaScript
+3. Materialize
 
 ### Functionality:
 
 The following lists all functions within this project:
 
-*
-*
-*
+* user can see homepage with nav bar and user posts
+    - user can sign up or log in
+    - user can see individual posts and comments
+* user can sign up for an account or log in to see a dashboard
+    - dashboard displays option to create a new post
+    - dashboard displays any posts already created with options to edit or delete
+* user can edit or delete post then be redirected to dashboard
+* user can, once logged in, make comments on posts
+* user can log out and then be redirected to dashboard
+* user will be logged out after 5 min of inactivity
 
 ### Process:
 #### Tasks
 
+* sequelize is used to seed a database using models
+* brcrypt is used to hash user passwords to maintain security
+* MySQL Workbench is used to check seeded database tables
+* express.js is used to create perform RESTful CRUD operations
+* Insomnia CORE is used to test express.js controller routes
+* session was used to indicate status of a user-log-in state
+* handlebars.js is used to render data from CRUD operations onto front-end application
+* materialize is used to create an easy to navigate UI/UX
+* Heroku is used to deploy the application
+
 ### Beyond the MVP
+
+A few useful items to make the application more approachable and user-friendly:
+* notifications rather than alerts for 400/404 errors
+* notifications for logging users out after 5 min of inactivity
+* adding status if posts have been edited onto handlebars views
 
 ****
 
