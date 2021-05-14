@@ -1,16 +1,26 @@
 # TECH BLOG - MVC paradigm  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
+- [Project Overview](#Project-Overview)
+- [MVP](#MVP)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Application Screenshots](#Application-Screenshots)
+- [Deployment](#Deployment)
+- [License](#License)
+- [Credit](#Credit)
 
 ****
 
-## Project overview
+## Project Overview
 
 A tech blog featuring the Model-View-Controller paradigm using Handlebars and Sequelize.
 
+![blog](./assets/images/blog.png)
+
 ### Project Status:
 
-*ONGOING*
+*COMPLETED*
 
 #### Issues to debug:
 
@@ -97,17 +107,35 @@ A few useful items to make the application more approachable and user-friendly:
 2. Open Terminal (MacOS) or Git Bash (Windows) and change location to where you want the cloned directory
 3. Type `git clone` and paste copied respository
 4. Directory should include the following:
+
 ![Directory Structure:](./assets/images/dir-struc.png)
 
 ## Usage
 
+**IMPORTANT >>>**
+- rename `.env.EXAMPLE` to `.env`
+- insert your own sql password where:  //YOUR SQL PASSWORD HERE//
+
+Copy and paste the schema located in the `db` directory into your MYSQL workbench or create the database through your SQL shell
+
+**RUN WITH CLI**
+- `npm init`
+- `npm run seed`
+- `npm start`
+
+Open browser on indicated PORT
+
 ## Application Screenshots
 
+A screenshot of the user dashboard:
+
+![dashboard view](./assets/images/dashboard.png)
 
 ****
 
 ## Deployment
 
+This app is deployed on Heroku @  https://polar-cliffs-80167.herokuapp.com/
 
 ****
 
@@ -115,6 +143,9 @@ A few useful items to make the application more approachable and user-friendly:
 
 This application is licensed under the MIT license - please refer to the included `LICENSE` file in this repo.
 
+****
+
 ## Credit
 
+* Kat Poulos for helping with bulk of the issues - thank goodness for a most wonderful TA!
 * Full-stack Bootcamp Program @ [Washington University, Saint Louis](https://bootcamp.tlcenter.wustl.edu/) through [© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand](https://www.trilogyed.com/)
